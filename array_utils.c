@@ -128,4 +128,5 @@ int * reverseCopy(int *arr, int size){
 
     }
     return reverseAryCopy;
+    // ERROR HANDLING
 }
