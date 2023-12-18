@@ -30,4 +30,11 @@ int main(){
   if(copyArray != NULL){
     printArray(copyArray, newSize);
   }
+  int arr3[] = {10, 15, 5, 25, 0};
+  printArray(arr3, 5);
+  reverse(arr3, 5);
+  printArray(arr3, 5);
+  printArray(arr, 8);
+  int * reverseCpyAry = reverseCopy(arr, 8);
+  printArray(reverseCpyAry, 8);
 }  

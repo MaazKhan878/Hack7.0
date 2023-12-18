@@ -82,3 +82,50 @@ void printArray(int *copyArray, int newSize){
     printf("\n");
 }
 
+// FUNCTION: THIS FUNCTION SWIP THE ELEMENT OF ARRAY WITH EACH OTHER
+void reverse(int *arr, int size){
+    // CHECK 
+    if(size<=0){
+        printf("Invalide Input to function...\n");
+        return;
+    }
+    int i = 0;
+    int j = size - 1;
+    int swip;
+    // LOOP: SWIPT THE ELEMENT TO CERTAIN CONDITION
+    while(i<j){
+        swip = arr[i];
+        arr[i] = arr[j];
+        arr[j] = swip;
+        i++;
+        j--; 
+    }
+  
+}
+
+int * reverseCopy(int *arr, int size){
+    if(arr == NULL || size<0){
+        printf("Invalide parameter list...\n");
+        return NULL;
+    }
+    int *reverseAryCopy = (int *)malloc(size * sizeof(int));
+    if(reverseAryCopy == NULL){
+        printf("Memory allocation field...\n");
+        return NULL;
+    } 
+    int i = 0;
+    int j = size - 1;
+    int swip = 0;
+    for(int k = 0; k<size; k++){
+        if(i<j){
+           swip=arr[i];
+           arr[i] = arr[j];
+           arr[j] = swip;
+           i++;
+           j--;
+        }
+        reverseAryCopy[k] = arr[k];
+
+    }
+    return reverseAryCopy;
+}
