@@ -15,12 +15,19 @@ int main(){
 
   int i = 2;
   int j = 6;
-  int arr[8] = {3,4,5,3,2,1,3,4};
+  int arr[] = {3,4,5,3,2,1,3,4};
   int checkElement = containsWithin(arr, 8, 4, i, j);
   if(checkElement = 1){
     printf("The number %d contains in a Array in range %d to %d\n",4,i,j);
   }
   else{
      printf("The number %d not contains in a Array in range %d to %d\n",4,i,j);
+  }
+  int oldSize = 6;
+  int arr2[] = {2,3,4,5,6,7};
+  int newSize = 8;
+  int * copyArray = paddedCopy(arr2, oldSize, newSize);
+  if(copyArray != NULL){
+    printArray(copyArray, newSize);
   }
 }  

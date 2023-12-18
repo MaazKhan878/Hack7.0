@@ -59,14 +59,26 @@ int * paddedCopy(const int *arr, int oldSize, int newSize){
         return NULL;
     }
     int *copyArray = (int *)malloc(newSize * sizeof(int));
+    if(copyArray == NULL){
+        printf("Memory allocation field...");
+        return NULL;
+    }
     // LOOP: Run and check condition and copy the element from one to another array also if new array greater it put zero if not or less it copy the some of its element
     for(int i = 0; i<newSize; i++){
-        if(copyArray[i]<= arr[i]){
+        if(i<oldSize){
             copyArray[i] = arr[i];
+        }else{
+           copyArray[i] = 0;
         }
-        copyArray[i] = 0;
     }
     return copyArray;
     
+}
+// FUNCTION: Simple function to Print array
+void printArray(int *copyArray, int newSize){
+    for(int i = 0 ; i<newSize; i++){
+        printf("%d ",copyArray[i]);
+    }
+    printf("\n");
 }
 
