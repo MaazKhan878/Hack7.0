@@ -10,7 +10,7 @@
 /**
  * Prints the given array to the standard output
  */
-void printArray(const int *arr, int size);
+// void printArray(int *arr, int size);
 
 int main(int argc, char **argv) {
 
@@ -52,10 +52,10 @@ int main(int argc, char **argv) {
 
 }
 
-void printArray(const int *arr, int size) {
-  printf("[");
-  for(int i=0; i<size-1; i++) {
-    printf("%d, ", arr[i]);
-  }
-  printf("%d]\n ", arr[size-1]);
-}
+// void printArray(int *arr, int size) {
+//   printf("[");
+//   for(int i=0; i<size-1; i++) {
+//     printf("%d, ", arr[i]);
+//   }
+//   printf("%d]\n ", arr[size-1]);
+// }

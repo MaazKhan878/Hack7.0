@@ -36,5 +36,7 @@ int main(){
   printArray(arr3, 5);
   printArray(arr, 8);
   int * reverseCpyAry = reverseCopy(arr, 8);
-  printArray(reverseCpyAry, 8);
+  if(reverseCpyAry != NULL){
+     printArray(reverseCpyAry, 8);
+  }
 }  
