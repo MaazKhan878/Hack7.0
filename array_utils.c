@@ -2,6 +2,8 @@
 
 //place your function definitions here
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 // FUNCTION: TO check it contains the give number or not
 int contains(const int *arr, int size, int x){
@@ -49,6 +51,20 @@ int containsWithin(const int *arr, int size, int x, int i, int j){
     }
 }
 
+// Function: make dynamic array to stor the old size array and if it large size store zero
 int * paddedCopy(const int *arr, int oldSize, int newSize){
+    if(arr == NULL || oldSize <=0 || newSize<=0 ){
+        printf("Invalide Input to function...\n");
+        return NULL;
+    }
+    int *copyArray = (int *)malloc(newSize * sizeof(int));
+    for(int i = 0; i<copyArray[i]; i++){
+        if(copyArray[i]<= arr[i]){
+            copyArray[i] = arr[i];
+        }
+        copyArray[i] = 0;
+    }
+    return copyArray;
     
 }
+
