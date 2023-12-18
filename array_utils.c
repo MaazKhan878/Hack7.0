@@ -53,12 +53,14 @@ int containsWithin(const int *arr, int size, int x, int i, int j){
 
 // Function: make dynamic array to stor the old size array and if it large size store zero
 int * paddedCopy(const int *arr, int oldSize, int newSize){
+    // ERROR HANDLING
     if(arr == NULL || oldSize <=0 || newSize<=0 ){
         printf("Invalide Input to function...\n");
         return NULL;
     }
     int *copyArray = (int *)malloc(newSize * sizeof(int));
-    for(int i = 0; i<copyArray[i]; i++){
+    // LOOP: Run and check condition and copy the element from one to another array also if new array greater it put zero if not or less it copy the some of its element
+    for(int i = 0; i<newSize; i++){
         if(copyArray[i]<= arr[i]){
             copyArray[i] = arr[i];
         }
