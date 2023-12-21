@@ -78,17 +78,29 @@ Pixel ** copyImage(Pixel **image, int height, int width) {
   }
   return copy;
 }
-
+// FUNCTION: FLIP IMAGE HORIZENTALLY BY CHANGING THE WIDTH VALUE
 void flipHorizontal(Pixel **image, int height, int width) {
-  //TODO: implement
+  for(int i = 0; i<height; i++){
+    for(int j = 0; j<width/2; j++){
+      Pixel temp = image[i][j];
+      image[i][j] = image[i][width - 1 - j];
+      image[i][width - 1 - j] = temp;
+    }
+  }
   return;
 }
-
+// FUNCTION: FLIP IMAGE VERTICALLY BY CHANGING THE HIEGHT VALUE
 void flipVertical(Pixel **image, int height, int width) {
-  //TODO: implement
+  for(int i = 0; i<height/2; i++){
+    for(int j = 0; j<width; j++){
+      Pixel temp = image[i][j];
+      image[i][j] = image[height - 1 - i][j];
+      image[height - 1 - i][j] = temp;
+    }
+  }
   return;
 }
 
 Pixel ** rotateClockwise(Pixel **image, int height, int width) {
-  //TODO: implement
+  
 }
