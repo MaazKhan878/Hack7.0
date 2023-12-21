@@ -60,17 +60,13 @@ void saveImage(const char *fileName, Pixel **image, int height, int width) {
 }
 //FUNCTION: RETURN THE DYNAMIC MEMORY FOR PIXEL
 Pixel ** copyImage(Pixel **image, int height, int width) {
-  if(copyImage == NULL){
-    printf("ERROR.INVALIDE ARRAY\n");
-    return NULL;
-  }
-  Pixel **copy = (Pixel **)malloc(height * sizeof(Pixel*));
+  Pixel **copy = malloc(height * sizeof(Pixel*));
   if(copy == NULL){
     printf("FAILED: MEMORY ALLOCATION\n");
     return NULL;
   }
   for(int i = 0; i<height; i++){
-    copy[i] = (Pixel *)malloc(width * sizeof(Pixel*));
+    copy[i] = malloc(width * sizeof(Pixel*));
     if(copy[i] == NULL){
       printf("FAILED: MEMORY ALLOCATION.");
       return NULL;
@@ -102,13 +98,13 @@ void flipVertical(Pixel **image, int height, int width) {
 }
 //FUNCTION: ROTATE THE PICTURE BY MANIPULATING THE IMAGE VALUE AND RETURN THE VALUES
 Pixel ** rotateClockwise(Pixel **image, int height, int width) {
-  Pixel **rotate = (Pixel *)malloc(height * sizeof(Pixel *));
+  Pixel **rotate = malloc(height * sizeof(Pixel *));
   if(rotate == NULL){
     printf("ERROR: INVALIDE MEMORY ALLOCATION\n");
     return NULL;
   }
   for(int i = 0; i<height; i++){
-    rotate[i] = (Pixel*)malloc(width * sizeof(Pixel));
+    rotate[i] = malloc(width * sizeof(Pixel));
     if(rotate == NULL){
       printf("ERROR.INVALIDE MEMORY ALLOCATION");
       return NULL;
