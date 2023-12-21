@@ -100,7 +100,26 @@ void flipVertical(Pixel **image, int height, int width) {
   }
   return;
 }
-
+//FUNCTION: ROTATE THE PICTURE BY MANIPULATING THE IMAGE VALUE AND RETURN THE VALUES
 Pixel ** rotateClockwise(Pixel **image, int height, int width) {
+  Pixel **rotate = (Pixel *)malloc(height * sizeof(Pixel *));
+  if(rotate == NULL){
+    printf("ERROR: INVALIDE MEMORY ALLOCATION\n");
+    return NULL;
+  }
+  for(int i = 0; i<height; i++){
+    rotate[i] = (Pixel*)malloc(width * sizeof(Pixel));
+    if(rotate == NULL){
+      printf("ERROR.INVALIDE MEMORY ALLOCATION");
+      return NULL;
+    }
+    for(int i = 0; i<height; i++){
+      for(int j = 0; j<width; j++){
+        rotate[i][j] = image[height - 1 - j][i];
+      }
+    }
+  }
+  return rotate;
+
   
 }
