@@ -58,9 +58,25 @@ void saveImage(const char *fileName, Pixel **image, int height, int width) {
   free(data);
   return;
 }
-
+//FUNCTION: RETURN THE DYNAMIC MEMORY FOR PIXEL
 Pixel ** copyImage(Pixel **image, int height, int width) {
-  //TODO: implement
+  if(copyImage == NULL){
+    printf("ERROR.INVALIDE ARRAY\n");
+    return NULL;
+  }
+  Pixel **copy = (Pixel **)malloc(height * sizeof(Pixel*));
+  if(copy == NULL){
+    printf("FAILED: MEMORY ALLOCATION\n");
+    return NULL;
+  }
+  for(int i = 0; i<height; i++){
+    copy[i] = (Pixel *)malloc(width * sizeof(Pixel*));
+    if(copy[i] == NULL){
+      printf("FAILED: MEMORY ALLOCATION.");
+      return NULL;
+    }
+  }
+  return copy;
 }
 
 void flipHorizontal(Pixel **image, int height, int width) {
